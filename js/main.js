@@ -1,16 +1,16 @@
 (function(){
 
-	var INTERVAL = 10;
+	var INTERVAL = 30;
 
 	$(document).ready( function(){
 
 		var canvasContext = $('#world')[0].getContext('2d'),
 			world = new World(canvasContext);
 
-			world.addRandomWalker();
-			world.addRandomWalker();
-			world.addRandomWalker();
-			world.addRandomWalker();
+			for(var i = 0; i < 10; i++){
+				world.addRandomWalker();
+			}
+
 
 		setInterval( function(){
 			world.quantum();
