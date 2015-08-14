@@ -4,6 +4,8 @@ HEIGHT = 600;
 var World = function(context){
 	this.context = context;
 	this.walkers = [];
+	this.width = WIDTH;
+	this.height = WIDTH;
 }
 
 World.prototype.quantum = function(){
@@ -23,7 +25,7 @@ World.prototype.addWalker = function(walker){
 }
 
 World.prototype.addRandomWalker = function(){
-	var w = new Walker(randRange(0, WIDTH), randRange(0, HEIGHT));
+	var w = new Walker(randRange(0, this.width), randRange(0, this.height), this);
 	this.walkers.push(w);
 }
 

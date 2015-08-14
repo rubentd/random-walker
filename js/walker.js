@@ -1,9 +1,10 @@
-var Walker = function(x, y){
+var Walker = function(x, y, world){
 	this.x = x;
 	this.y = y;
 	this.previousX = -1;
 	this.previousY = -1;
 	this.stepSize = 1;
+	this.world = world;
 };
 
 Walker.prototype.step = function(context){
@@ -20,8 +21,15 @@ Walker.prototype.step = function(context){
 	this.previousX = this.x;
 	this.previousY = this.y;
 
-	this.x += stepX;
-	this.y -= stepY;
+	var futureX = this.x + stepX;
+	if( futureX > 0 && futureX < this.world.width){
+		this.x = futureX
+	}
+
+	var futureY = this.y + stepY;
+	if(futureY > 0 && futureY < this.world.height){
+		this.y = futureY;
+	}
 	
 
 };

@@ -1,6 +1,6 @@
 (function(){
 
-	var INTERVAL = 5;
+	var INTERVAL = 10;
 
 	$(document).ready( function(){
 
